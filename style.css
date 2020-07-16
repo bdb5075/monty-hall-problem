@@ -1,0 +1,58 @@
+body {
+	background: #1D4054;
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 18px;
+	color: #eee;
+}
+
+h1 {
+	font-family:'Boogaloo', cursive;
+	text-transform: uppercase;
+	font-size: 64px;
+}
+
+.doors {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.door {
+	width: 25%;
+	padding-bottom: 20%;
+	margin: 25px;
+	background: url("img/curtain.jpg") center center / cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.door h2 {
+	color: white;
+	font-size: 64px;
+}
+
+.door h3 {
+	color: white;
+	visibility: hidden;
+}
+
+.winner {
+	background: blue;
+	color: white;
+}
+
+.selection {
+	visibility: hidden;
+}
+
+.goat {
+	background: url('img/goat.jpg') center center / cover;
+	background-position: 30% 50%;
+}
+
+.winner {
+	background: url('img/car.jpg') center center / cover;
+	background-size: 400px 500px;
+}
