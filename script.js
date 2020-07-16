@@ -19,6 +19,7 @@ function assignDoors() {
 	//do not allow a second door to be clicked
 	if (doorPicked) return;
 	pickedDoor = this;
+	//show what door was selected
 	pickedDoor.lastElementChild.style.visibility = "visible";
 	doorPicked = true;
 	// if the door is not the winning door, assign it to the zonks array
@@ -58,7 +59,7 @@ setTimeout (function openADoor() {
 	directions.textContent = "Would you like to switch doors?";
 	//can now see yes and no buttons 
 	for (var i=0; i<button.length; i++) {
-		button[i].style.visibility = "visible";
+		button[i].style.display = "inline";
 		button[i].addEventListener("click", decisionTime);
 	}
 }, 3000);
@@ -80,10 +81,12 @@ function decisionTime() {
 		//switch picked door
 		if(pickedDoor === remainingDoors[0]) {
 			pickedDoor = remainingDoors[1];
+			//show what door was selected
 			remainingDoors[0].lastElementChild.style.visibility = "hidden";
 			pickedDoor.lastElementChild.style.visibility = "visible";
 		} else {
 			pickedDoor = remainingDoors[0];
+			//show what door was selected
 			remainingDoors[1].lastElementChild.style.visibility = "hidden";
 			pickedDoor.lastElementChild.style.visibility = "visible";
 		}
@@ -96,11 +99,13 @@ function decisionTime() {
 	} else {
 		directions.textContent = "Sorry. Play again?"
 	}
+	//show the car and goats behind the door
 	winner.classList.add("winner");
 	for(var i=0; i<doors.length; i++){
 		if(doors[i] != winner) {
 		doors[i].classList.add("goat");
 	}}
+	//hide the yes and no buttons 
 	for (var i=0; i<button.length; i++) {
 		button[i].style.visibility = "hidden";
 	}
@@ -116,8 +121,10 @@ playButton.addEventListener("click", function() {
 	//add event listener to doors
 	for (var i=0; i<doors.length; i++) {
 	doors[i].addEventListener("click", assignDoors);
+	//show directions
 	directions.style.visibility = "visible";
-	playButton.style.visibility = "hidden";
+	//hide play button after it is clicked
+	playButton.style.display = "none";
 	}
 })
 

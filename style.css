@@ -12,10 +12,23 @@ h1 {
 	font-size: 64px;
 }
 
+#play-button {
+	background: #3078A1;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	font-size: 18px;
+}
+
+button:hover, 
+.door:hover {
+	cursor: pointer;
+}
+
 #directions{
 	visibility: hidden;
 }
-
 
 .doors {
 	display: flex;
@@ -49,7 +62,21 @@ h1 {
 }
 
 .selection {
-	visibility: hidden;
+	display: none;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	font-size: 16px;
+	margin: 10px;
+}
+
+.yes {
+	background: #3078A1;
+}
+
+.no {
+	background: #A14045
 }
 
 .goat {
