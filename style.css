@@ -12,6 +12,11 @@ h1 {
 	font-size: 64px;
 }
 
+#directions{
+	visibility: hidden;
+}
+
+
 .doors {
 	display: flex;
 	justify-content: center;
@@ -50,6 +55,7 @@ h1 {
 .goat {
 	background: url('img/goat.jpg') center center / cover;
 	background-position: 30% 50%;
+	
 }
 
 .winner {
