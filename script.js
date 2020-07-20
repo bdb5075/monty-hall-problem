@@ -1,8 +1,8 @@
-var doors = document.querySelectorAll('.door');
-var directions = document.getElementById("directions");
-var button = document.getElementsByClassName('selection');
-var body = document.querySelector("body");
-var playButton = document.getElementById('play-button');
+let doors = document.querySelectorAll('.door');
+let directions = document.getElementById("directions");
+let button = document.getElementsByClassName('selection');
+let body = document.querySelector("body");
+let playButton = document.getElementById('play-button');
 
 let doorPicked = false;
 let zonks = [];
@@ -23,14 +23,14 @@ function assignDoors() {
 	pickedDoor.lastElementChild.style.visibility = "visible";
 	doorPicked = true;
 	// if the door is not the winning door, assign it to the zonks array
-	for (var i=0; i<doors.length; i++) {
+	for (let i=0; i<doors.length; i++) {
 		if(doors[i] != winner) {
 			zonks.push(doors[i]);
 		} 
 	};
 	// randomly assign the zonks doors to variables
 	random = Math.floor(Math.random()*2);
-	for (var i=0; i<zonks.length; i++) {
+	for (let i=0; i<zonks.length; i++) {
 		if (i === random) {
 		zonkOne = zonks[i];
 	} else {
@@ -58,7 +58,7 @@ setTimeout (function openADoor() {
 	//Now that one of the zonk doors is open, the player decides if they want to switch doors
 	directions.textContent = "Would you like to switch doors?";
 	//can now see yes and no buttons 
-	for (var i=0; i<button.length; i++) {
+	for (let i=0; i<button.length; i++) {
 		button[i].style.display = "inline";
 		button[i].addEventListener("click", decisionTime);
 	}
@@ -70,7 +70,7 @@ function decisionTime() {
 	let pickedButton = this;
 	let yesButton = button[0];
 	let noButton = button[1];
-	for (var i=0; i<doors.length; i++) {
+	for (let i=0; i<doors.length; i++) {
 		if(doors[i] != openDoor) {
 			remainingDoors.push(doors[i]);
 		}
@@ -101,12 +101,12 @@ function decisionTime() {
 	}
 	//show the car and goats behind the door
 	winner.classList.add("winner");
-	for(var i=0; i<doors.length; i++){
+	for(let i=0; i<doors.length; i++){
 		if(doors[i] != winner) {
 		doors[i].classList.add("goat");
 	}}
 	//hide the yes and no buttons 
-	for (var i=0; i<button.length; i++) {
+	for (let i=0; i<button.length; i++) {
 		button[i].style.visibility = "hidden";
 	}
 }, 1500);
@@ -119,7 +119,7 @@ let winner = doors[randomNumber];
 //press button to play game
 playButton.addEventListener("click", function() {
 	//add event listener to doors
-	for (var i=0; i<doors.length; i++) {
+	for (let i=0; i<doors.length; i++) {
 	doors[i].addEventListener("click", assignDoors);
 	//show directions
 	directions.style.visibility = "visible";
